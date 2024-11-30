@@ -7,7 +7,7 @@ from metric_duapre import compress_wiki, compress, calculate_map, calculate_top_
 # import datasetspre as datasets
 import settingsnuspre as settings
 from models3pre3 import ImgNet, TxtNet, DeTxtNet, DeImgNet, GenHash, GetTxtNet, GetImgNet, FuseTransEncoder, GetITNet
-from load_data import get_loader_flickr, get_loader_nus, get_loader_coco, get_loader_flickr_CLIP
+from load_data import get_loader_flickr, get_loader_nus, get_loader_coco
 import os.path as osp
 import sys
 
@@ -559,7 +559,7 @@ def main():
     #                                      transform=datasets.wiki_test_transform)
 
     if settings.DATASET == "MIRFlickr":
-        dataloader, data_train = get_loader_flickr_CLIP(settings.BATCH_SIZE)
+        dataloader, data_train = get_loader_flickr(settings.BATCH_SIZE)
         train_dataset = dataloader['train']
         test_dataset = dataloader['query']
         database_dataset = dataloader['database']
